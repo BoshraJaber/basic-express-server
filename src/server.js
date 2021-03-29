@@ -1,28 +1,24 @@
 'use strict';
 
 const express = require('express');
+// Global Middleware
 const logger = require('./middleware/loggers');
 const validator = require('./middleware/validator.js');
+//Errors Handlers
+const notFoundHandler = require('./error-handler/404.js');
+const errorHandler = require('./error-handler/500.js');
 
 const app = express();
 app.use(express.json());
 app.use(logger);
 app.use(validator);
 
-
-// app.get('/person', (req, res,next) => {
-//   let name = req.query.name;
-//   console.log('__QUERY__', req.query);
-//     if (typeof name !== 'string') {
-//     next('There is no name');
-//   } else {
-//     res.json({
-//     name: name,
-//     });
-//   }  
-// });
-
-app.use('/person', validator)
+app.use('/person', validator);
+app.get('/error', (req, res) => {
+  throw new error('Server Error ');
+});
+app.use('*', notFoundHandler);
+app.use(errorHandler);
   
 
 

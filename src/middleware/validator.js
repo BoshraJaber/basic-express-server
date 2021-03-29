@@ -1,3 +1,8 @@
+'use strict';
+const server = require('../server.js');
+app.use(express.json());
+
+
 module.exports = (req, res, next) => {
     let name = req.query.name;
     // console.log('__QUERY__', name);
