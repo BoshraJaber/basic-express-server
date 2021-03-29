@@ -17,10 +17,10 @@ app.use(logger); // global
 app.get('/person', validator, (req,res)=>{
   res.json({
     name: req.query.name,
-    });
+  });
 });
 app.get('/error', (req, res) => {
-  throw new error('Server Error ');
+  throw new Error('Server Error ');
 });
 app.use('*', notFoundHandler);
 app.use(errorHandler);
@@ -29,9 +29,9 @@ app.use(errorHandler);
 
 module.exports = {
   app: app,
- // anonyms function that doesn't have a name
- start: (port)=>{
-   const PORT = port || 5000;
-   app.listen(PORT, ()=>console.log(`App is listening on port ${port}`))
- },
+  // anonyms function that doesn't have a name
+  start: (port)=>{
+    const PORT = port || 5000;
+    app.listen(PORT, ()=>console.log(`App is listening on port ${port}`));
+  },
 };
