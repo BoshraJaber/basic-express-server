@@ -2,7 +2,7 @@
 module.exports = (err, req, res, next) => {
     res.status(500);
     res.json({
-        error: 500,
+        status: 500,
       message: err.message,
       route: req.path,
     });

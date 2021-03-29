@@ -1,16 +1,12 @@
 'use strict';
-const server = require('../server.js');
-app.use(express.json());
-
-
+// const server = require('../server.js').app;
+// app.use(express.json());
 module.exports = (req, res, next) => {
-    let name = req.query.name;
+    let keyName = req.query.name;
     // console.log('__QUERY__', name);
-    if (typeof name !== 'string') {
+    if (typeof keyName !== 'string') {
     next('There is no name');
   } else {
-    res.json({
-    name: name,
-    });
+    next();
   }
   };

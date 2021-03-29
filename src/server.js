@@ -3,17 +3,22 @@
 const express = require('express');
 // Global Middleware
 const logger = require('./middleware/loggers');
-const validator = require('./middleware/validator.js');
+const validator = require('./middleware/validator');
 //Errors Handlers
 const notFoundHandler = require('./error-handler/404.js');
 const errorHandler = require('./error-handler/500.js');
 
 const app = express();
 app.use(express.json());
-app.use(logger);
-app.use(validator);
+// var router = express.Router();
+app.use(logger); // global
+// router.use(validator);
 
-app.use('/person', validator);
+app.get('/person', validator, (req,res)=>{
+  res.json({
+    name: req.query.name,
+    });
+});
 app.get('/error', (req, res) => {
   throw new error('Server Error ');
 });
