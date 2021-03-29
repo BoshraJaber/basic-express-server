@@ -3,7 +3,8 @@
 ## Deployment Test
 ### Author: Boshra Jaber
 * [tests report](https://github.com/BoshraJaber/basic-express-server/actions)
-* [Heroku application for main branch](https://boshra-server-deploy-prod.herokuapp.com/)
+* [Heroku application for main branch](https://boshra-basic-express-server.herokuapp.com/)
+* [Pull Request to main](https://github.com/BoshraJaber/basic-express-server/pull/3)
 
 ## Setup
 - `.env` requirements:
