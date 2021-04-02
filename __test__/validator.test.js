@@ -4,7 +4,7 @@ const server = require('../src/server');
 // const validator = require('../src/middleware/validator');
 const request = superTest(server.app);
 
-describe('Server', () => {
+describe('Validator Test', () => {
   it('no name in the query string', async () => {
     const response = await request.get('/person');
     expect(response.status).toEqual(500);
