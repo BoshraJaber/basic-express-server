@@ -1,6 +1,6 @@
-  
 'use strict';
-const logger = require('../src/middleware/logger.js');
+const superTest = require('supertest');
+const logger = require('../src/middleware/loggers');
 
 describe('Logger Middleware', () => {
   let consoleSpy;
